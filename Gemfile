@@ -1,0 +1,10 @@
+source "https://rubygems.org"
+
+gem "capybara"
+gem "cucumber"
+gem "rspec"
+gem "os"
+gem "pg"
+gem "report_builder"
+gem "allure-cucumber"
+gem "httparty"
