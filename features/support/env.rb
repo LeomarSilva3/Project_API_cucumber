@@ -5,4 +5,6 @@ require "cucumber"
 require "httparty"
 require "httparty/request"
 require "httparty/response/headers"
+require "report_builder"
+require "allure-cucumber"
 
