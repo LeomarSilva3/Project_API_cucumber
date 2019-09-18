@@ -3,8 +3,9 @@ Dado("que visualizo a rota {string}") do |endpoint|
 
 end
 
-Dado("que insiro o header {string}") do |json|
-    @head = json
+Dado("que insiro o header {string}, {string}") do |content_type, aplication_json|
+    @ContentType = content_type
+    @ApplicationJson = aplication_json
 end
 
 Quando("realizar uma requisição com os parametros {string}, {string} e {string} via metodo POST no body da requisição") do |name, email, senha|
@@ -16,7 +17,7 @@ Quando("realizar uma requisição com os parametros {string}, {string} e {string
             password: senha
         }.to_json,
         headers: {
-            "Content-Type" => "application/json",
+            @ContentType => @ApplicationJson,
         },
     )
 
@@ -33,7 +34,7 @@ Quando("realizar uma requisição com os parametros errados {string}, {string} e
             password: senha
         }.to_json,
         headers: {
-            "Content-Type" => "application/json",
+            @ContentType => @ApplicationJson,
         },
     )
 
@@ -48,7 +49,7 @@ Quando("realizar uma requisição com os parametros nullos via metodo POST no bo
             password:"" 
         }.to_json,
         headers: {
-            "Content-Type" => "application/json",
+            @ContentType => @ApplicationJson,
         },
     )
 

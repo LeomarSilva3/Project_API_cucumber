@@ -9,7 +9,7 @@ Afim de poder criar um novo usuario na base de dados
 
 Esquema do Cenario: Criar um novo usuario
     Dado que visualizo a rota "http://localhost:3001/user"
-    E que insiro o header '"Content-Type" => "application/json"'
+    E que insiro o header "Content-Type", "application/json"
     Quando realizar uma requisição com os parametros "<full_name>", "<email>" e "<password>" via metodo POST no body da requisição 
     Então tem o retorno do "<codigo>"
     E tem usuario cadastrado com sucesso
@@ -21,7 +21,7 @@ Esquema do Cenario: Criar um novo usuario
 
 Esquema do Cenario: Erros ao criar um novo usuário
     Dado que visualizo a rota "http://localhost:3001/user"
-    E que insiro o header '"Content-Type" => "application/json"'
+    E que insiro o header "Content-Type", "application/json"
     Quando realizar uma requisição com os parametros errados "<full_name>", "<email>" e "<password>" via metodo POST no body da requisição 
     Então tem o retorno do "<codigo>"
     E recebe uma mensagem "<msg>" no retorno
@@ -35,7 +35,7 @@ Esquema do Cenario: Erros ao criar um novo usuário
 
 Esquema do Cenario: Parametros nulos
     Dado que visualizo a rota "http://localhost:3001/user"
-    E que insiro o header '"Content-Type" => "application/json"'
+    E que insiro o header "Content-Type", "application/json"
     Quando realizar uma requisição com os parametros nullos via metodo POST no body da requisição 
     Então tem o retorno do "<codigo>"
     E recebe uma mensagem "<msg>" no retorno
