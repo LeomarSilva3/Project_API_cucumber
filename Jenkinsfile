@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image "ruby:alpine"
-        }
-       
-    }
+    
     stages {
         stage("Build") {
             steps {
