@@ -16,7 +16,7 @@ pipeline {
         }
         stage("Testes"){
             steps {
-                sh "bundle exec cucumber"
+                sh "bundler exec cucumber --format pretty --format json --out=log/relatorio_api.json"
                 
             }
             post {

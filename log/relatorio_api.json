@@ -1,0 +1,410 @@
+[
+  {
+    "uri": "features/specs/post.feature",
+    "id": "criar-um-novo-usuario-atraves-de-um-cliente-api",
+    "keyword": "Funcionalidade",
+    "name": "Criar um novo usuario atraves de um cliente API",
+    "description": "Como um cliente da API\nQuero enviar requisições com o metodo POST\nAfim de poder criar um novo usuario na base de dados",
+    "line": 3,
+    "elements": [
+      {
+        "keyword": "Contexto",
+        "name": "Configuração para enviar requisições com o metodo POST",
+        "description": "",
+        "line": 8,
+        "type": "background",
+        "steps": [
+          {
+            "keyword": "Dado ",
+            "name": "que visualizo a rota \"http://localhost:3001/user\"",
+            "line": 9,
+            "match": {
+              "location": "features/step_definitions/post.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 47441
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "que insiro o header \"Content-Type\", \"application/json\"",
+            "line": 10,
+            "match": {
+              "location": "features/step_definitions/post.rb:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 38813
+            }
+          }
+        ]
+      },
+      {
+        "id": "criar-um-novo-usuario-atraves-de-um-cliente-api;criar-um-novo-usuario;;2",
+        "keyword": "Esquema do Cenario",
+        "name": "Criar um novo usuario",
+        "description": "",
+        "line": 20,
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Quando ",
+            "name": "realizar uma requisição com os parametros \"jose3\", \"leomar@jose3.io\" e \"123456\" via metodo POST no body da requisição",
+            "line": 14,
+            "match": {
+              "location": "features/step_definitions/post.rb:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 100967049
+            }
+          },
+          {
+            "keyword": "Então ",
+            "name": "tem o retorno do \"200\"",
+            "line": 15,
+            "match": {
+              "location": "features/step_definitions/post.rb:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 506925
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "tem usuario cadastrado com sucesso",
+            "line": 16,
+            "output": [
+              "{\n    \"id\": 892,\n    \"full_name\": \"jose3\",\n    \"email\": \"leomar@jose3.io\",\n    \"password\": \"$2b$10$mZ2A05VBp.IcVxnIrInWwuqBnrp2VxiLVpN9ZMKCidnjRgc2bOnC.\",\n    \"updatedAt\": \"2019-09-18T19:58:23.551Z\",\n    \"createdAt\": \"2019-09-18T19:58:23.551Z\"\n}"
+            ],
+            "match": {
+              "location": "features/step_definitions/post.rb:63"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 62039
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Contexto",
+        "name": "Configuração para enviar requisições com o metodo POST",
+        "description": "",
+        "line": 8,
+        "type": "background",
+        "steps": [
+          {
+            "keyword": "Dado ",
+            "name": "que visualizo a rota \"http://localhost:3001/user\"",
+            "line": 9,
+            "match": {
+              "location": "features/step_definitions/post.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 29925
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "que insiro o header \"Content-Type\", \"application/json\"",
+            "line": 10,
+            "match": {
+              "location": "features/step_definitions/post.rb:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 18663
+            }
+          }
+        ]
+      },
+      {
+        "id": "criar-um-novo-usuario-atraves-de-um-cliente-api;erros-ao-criar-um-novo-usuário;;2",
+        "keyword": "Esquema do Cenario",
+        "name": "Erros ao criar um novo usuário",
+        "description": "",
+        "line": 30,
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Quando ",
+            "name": "realizar uma requisição com os parametros errados \"Tony Stark\", \"tony@stark.io\" e \"123456\" via metodo POST no body da requisição",
+            "line": 24,
+            "match": {
+              "location": "features/step_definitions/post.rb:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 92439104
+            }
+          },
+          {
+            "keyword": "Então ",
+            "name": "tem o retorno do \"409\"",
+            "line": 25,
+            "match": {
+              "location": "features/step_definitions/post.rb:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 65597
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "recebe uma mensagem \"Oops. Looks like you already have an account with this email address.\" no retorno",
+            "line": 26,
+            "match": {
+              "location": "features/step_definitions/post.rb:68"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 90340
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Contexto",
+        "name": "Configuração para enviar requisições com o metodo POST",
+        "description": "",
+        "line": 8,
+        "type": "background",
+        "steps": [
+          {
+            "keyword": "Dado ",
+            "name": "que visualizo a rota \"http://localhost:3001/user\"",
+            "line": 9,
+            "match": {
+              "location": "features/step_definitions/post.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 40469
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "que insiro o header \"Content-Type\", \"application/json\"",
+            "line": 10,
+            "match": {
+              "location": "features/step_definitions/post.rb:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 29224
+            }
+          }
+        ]
+      },
+      {
+        "id": "criar-um-novo-usuario-atraves-de-um-cliente-api;erros-ao-criar-um-novo-usuário;;3",
+        "keyword": "Esquema do Cenario",
+        "name": "Erros ao criar um novo usuário",
+        "description": "",
+        "line": 31,
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Quando ",
+            "name": "realizar uma requisição com os parametros errados \"Tony Stark\", \"tonystark.io\" e \"123456\" via metodo POST no body da requisição",
+            "line": 24,
+            "match": {
+              "location": "features/step_definitions/post.rb:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9452337
+            }
+          },
+          {
+            "keyword": "Então ",
+            "name": "tem o retorno do \"412\"",
+            "line": 25,
+            "match": {
+              "location": "features/step_definitions/post.rb:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 70905
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "recebe uma mensagem \"Oops. You entered a wrong email.\" no retorno",
+            "line": 26,
+            "match": {
+              "location": "features/step_definitions/post.rb:68"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 110058
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Contexto",
+        "name": "Configuração para enviar requisições com o metodo POST",
+        "description": "",
+        "line": 8,
+        "type": "background",
+        "steps": [
+          {
+            "keyword": "Dado ",
+            "name": "que visualizo a rota \"http://localhost:3001/user\"",
+            "line": 9,
+            "match": {
+              "location": "features/step_definitions/post.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 61311
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "que insiro o header \"Content-Type\", \"application/json\"",
+            "line": 10,
+            "match": {
+              "location": "features/step_definitions/post.rb:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 31998
+            }
+          }
+        ]
+      },
+      {
+        "id": "criar-um-novo-usuario-atraves-de-um-cliente-api;erros-ao-criar-um-novo-usuário;;4",
+        "keyword": "Esquema do Cenario",
+        "name": "Erros ao criar um novo usuário",
+        "description": "",
+        "line": 32,
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Quando ",
+            "name": "realizar uma requisição com os parametros errados \"\", \"\" e \"\" via metodo POST no body da requisição",
+            "line": 24,
+            "match": {
+              "location": "features/step_definitions/post.rb:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16310206
+            }
+          },
+          {
+            "keyword": "Então ",
+            "name": "tem o retorno do \"412\"",
+            "line": 25,
+            "match": {
+              "location": "features/step_definitions/post.rb:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 53038
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "recebe uma mensagem \"Validation notEmpty on full_name failed\" no retorno",
+            "line": 26,
+            "match": {
+              "location": "features/step_definitions/post.rb:68"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 73828
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Contexto",
+        "name": "Configuração para enviar requisições com o metodo POST",
+        "description": "",
+        "line": 8,
+        "type": "background",
+        "steps": [
+          {
+            "keyword": "Dado ",
+            "name": "que visualizo a rota \"http://localhost:3001/user\"",
+            "line": 9,
+            "match": {
+              "location": "features/step_definitions/post.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 33454
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "que insiro o header \"Content-Type\", \"application/json\"",
+            "line": 10,
+            "match": {
+              "location": "features/step_definitions/post.rb:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 18340
+            }
+          }
+        ]
+      },
+      {
+        "id": "criar-um-novo-usuario-atraves-de-um-cliente-api;parametros-nulos;;2",
+        "keyword": "Esquema do Cenario",
+        "name": "Parametros nulos",
+        "description": "",
+        "line": 42,
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Quando ",
+            "name": "realizar uma requisição com os parametros nullos via metodo POST no body da requisição",
+            "line": 36,
+            "match": {
+              "location": "features/step_definitions/post.rb:43"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 22700013
+            }
+          },
+          {
+            "keyword": "Então ",
+            "name": "tem o retorno do \"412\"",
+            "line": 37,
+            "match": {
+              "location": "features/step_definitions/post.rb:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 63964
+            }
+          },
+          {
+            "keyword": "E ",
+            "name": "recebe uma mensagem \"Validation notEmpty on full_name failed\" no retorno",
+            "line": 38,
+            "match": {
+              "location": "features/step_definitions/post.rb:68"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 74645
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
